@@ -5,7 +5,7 @@ export default function ApplicationCards(){
         <main className="container">
 				<ul className='job-list'>
 					{
-                    
+                    //Copies the array in order to sort it, avoiding mutations!
                     [...applications].sort().map(element => {
 						return (
 						<li key={element.id} className='job-card'>

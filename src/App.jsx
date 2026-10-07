@@ -1,5 +1,6 @@
 import { applications } from './applications';
 import ApplicationCards from './components/applicationCards';
+import SummaryCards from './components/summaryCards';
 /**
  * The starting point. Right now it dumps the raw data on the page so you can
  * see it is loading — replace all of this with your components.
@@ -33,28 +34,13 @@ export default function App() {
 				</div>
 			</header>
 			<div className="container">
-				<div className='summary'>
-					<div className="summary-tile">
-						<h1 className='count'>{totalApplications}</h1>
-						<h1 className='label'>TOTAL</h1>
-					</div>
-					<div className="summary-tile">
-						<h1 className='count'>{appliedCount}</h1>
-						<h1 className='label'>APPLIED</h1>
-					</div>
-					<div className="summary-tile">
-						<h1 className='count'>{interviewingCount}</h1>
-						<h1 className='label'>INTERVIEWING</h1>
-					</div>
-					<div className="summary-tile">
-						<h1 className='count'>{offeredCount}</h1>
-						<h1 className='label'>OFFER</h1>
-					</div>
-					<div className="summary-tile">
-						<h1 className='count'>{rejectedCount}</h1>
-						<h1 className='label'>REJECTED</h1>
-					</div>
-				</div>
+				<SummaryCards 
+					totalApplications={applications.length}
+					appliedCount={appliedCount}
+					interviewingCount={interviewingCount}
+					offeredCount={offeredCount}
+					rejectedCount={rejectedCount}				
+				></SummaryCards>
 				<div className="page-head">
 					<h2>Applications</h2>
 				</div>
