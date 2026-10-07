@@ -1,5 +1,5 @@
 import { applications } from './applications';
-
+import ApplicationCards from './components/applicationCards';
 /**
  * The starting point. Right now it dumps the raw data on the page so you can
  * see it is loading — replace all of this with your components.
@@ -32,37 +32,34 @@ export default function App() {
 					<h1>Job Application Tracker</h1>
 				</div>
 			</header>
-			<div className="filters">
-				<div className="chip">
-					<h3 className="badge">{totalApplications}</h3>
-					<p>TOTAL</p>
+			<div className="container">
+				<div className='summary'>
+					<div className="summary-tile">
+						<h1 className='count'>{totalApplications}</h1>
+						<h1 className='label'>TOTAL</h1>
+					</div>
+					<div className="summary-tile">
+						<h1 className='count'>{appliedCount}</h1>
+						<h1 className='label'>APPLIED</h1>
+					</div>
+					<div className="summary-tile">
+						<h1 className='count'>{interviewingCount}</h1>
+						<h1 className='label'>INTERVIEWING</h1>
+					</div>
+					<div className="summary-tile">
+						<h1 className='count'>{offeredCount}</h1>
+						<h1 className='label'>OFFER</h1>
+					</div>
+					<div className="summary-tile">
+						<h1 className='count'>{rejectedCount}</h1>
+						<h1 className='label'>REJECTED</h1>
+					</div>
 				</div>
-				<div className="chip">
-					<p className="badge">{appliedCount}</p>
-					<p>APPLIED</p>
-				</div>
-				<div className="chip">
-					<p className="badge">{interviewingCount}</p>
-					<p>INTERVIEWING</p>
-				</div>
-				<div className="chip">
-					<p className="badge">{offeredCount}</p>
-					<p>OFFER</p>
-				</div>
-				<div className="chip">
-					<p className="badge">{rejectedCount}</p>
-					<p>REJECTED</p>
+				<div className="page-head">
+					<h2>Applications</h2>
 				</div>
 			</div>
-			<main className="container">
-				<p>{applications.length} applications loaded.</p>
-				<pre>{JSON.stringify(applications[0], null, 2)}</pre>
-			</main>
-			{/* <div>
-				{applications.array.forEach(element => {
-				<p>ddd</p>
-				})}
-			</div> */}
+			<ApplicationCards></ApplicationCards>
 		</>
 	);
 }
