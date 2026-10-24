@@ -49,7 +49,7 @@ export default function App() {
 		
 		fetchData();
 		return () => controller.abort();
-	}, [url]);
+	}, []);
 
 	const visible = sorted.filter((app) => {
 		const matches = selected === 'all' || app.status === selected;
